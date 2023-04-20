@@ -8,9 +8,11 @@
 </head>
 <body>
     <h1 id="titulo">
-    O emblema do rei
+        <?php
+            echo "Olá, mundo! \u{1F30E}";
+        ?>
     </h1>
-    <p id="paragrafo">Vamos tentar nos livrar da maldição</p>
+    <p>Vamos tentar nos livrar da maldição</p>
 </body>
 <script>
 
