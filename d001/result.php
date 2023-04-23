@@ -19,7 +19,7 @@
                    <p>Numero antecessor:  $ant</p>
                    <p>Numero sucessor:  $suc</p>
        "?>
-        <button id="btn">Voltar</a></p>
+        <button id="btn">Voltar</button>
     </section>
     
 </body>
