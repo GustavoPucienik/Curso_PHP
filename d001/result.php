@@ -25,6 +25,6 @@
 </body>
 <script> 
  const btnvoltar = document.getElementById("btn")
- btnvoltar.addEventListener("click", function(){window.location.href='index.php'})
+ btnvoltar.addEventListener("click", () => window.location.href='index.php')
 </script>
 </html>
