@@ -10,9 +10,9 @@
     ],
     [
       'id' => 2,
-      'title' => 'Orientação a Objetos com Java',
-      'description' => 'Aprenda o paradigma de orientação a objetos com Java, uma linguagem em alta no mercado.',
-      'tags' => ['Java', 'OOP', 'Programação Avançada'],
+      'title' => 'Orientação a Objetos com Javascript',
+      'description' => 'Aprenda o paradigma de orientação a objetos com Javascript, uma linguagem em alta no mercado.',
+      'tags' => ['Javascript', 'OOP', 'Programação Avançada'],
       'img' => 'prog-2.jpg'
     ],
     [
