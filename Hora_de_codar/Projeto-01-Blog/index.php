@@ -1,6 +1,5 @@
 <?php 
     include_once("templates/header.php");
-    print_r($posts)
 ?>
 <main>
     <div id="title-container">
