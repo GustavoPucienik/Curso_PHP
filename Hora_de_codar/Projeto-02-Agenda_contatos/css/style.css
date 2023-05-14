@@ -1,3 +1,6 @@
 body{
-    background-color: #c91b1b;
+    background-color: #cc9595;
+}
+.navbar-brand img {
+    width: 50px;
 }
