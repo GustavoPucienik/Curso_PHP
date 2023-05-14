@@ -2,9 +2,11 @@
     include_once("templates/header.php")
 ?>
     <div class="container">
+
         <?php if(isset($printMsg) && $printMsg != ""): ?>
             <p id="msg"><?php $printMsg?></p>
-            <?php endif; ?>
+        <?php endif; ?>
+
             <h1 id="main-title">Minha agenda</h1>
             <?php if(is_countable($contacts) && count($contacts) > 0): ?>
                 <table class="table" id="contacts-table">
@@ -17,13 +19,13 @@
                     <tbody>
                         <?php foreach($contacts as $contact): ?>
                          <tr>
-                            <td scope="row"><?php $contact['id'] ?></td>
-                            <td scope="row"><?php $contact['name'] ?></td>
-                            <td scope="row"><?php $contact['phone'] ?></td>
+                            <td scope="row" class="col-id"><?= $contact['id'] ?></td>
+                            <td scope="row"><?= $contact['name'] ?></td>
+                            <td scope="row"><?= $contact['phone'] ?></td>
                             <td class="actions">
                                 <a href="#"><i class="fa fa-eye check-icon"></i></a>
                                 <a href="#"><i class="fa fa-edit edit-icon"></i></a>
-                                <button type="submit"><i class="fas fa-times delete-icon"></i></button>
+                                <button type="submit" class="delete-btn"><i class="fas fa-times delete-icon"></i></button>
                             </td>
                          </tr>   
                         <?php endforeach; ?>
