@@ -39,6 +39,11 @@
 .edit-icon{
     color: #007bff;
 }
+
+.delete-form{
+    display: inline-block;
+}
+
 .delete-icon{
     color: #bd2130;
 }
@@ -88,4 +93,19 @@
 
 #back-link:hover{
     text-decoration: none;
+}
+
+/* CREATE */
+
+#create-form,
+#edit-form{
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* MOBILE */
+@media(max-width: 480px){
+    #home-link{
+        display: none;
+    }
 }
