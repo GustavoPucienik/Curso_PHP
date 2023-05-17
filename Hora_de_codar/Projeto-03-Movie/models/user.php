@@ -21,7 +21,7 @@
         }
         public function generatePassword($password){
 
-            return $finalPassword = password_hash($password, PASSWORD_DEFAULT);
+            return password_hash($password, PASSWORD_DEFAULT);
 
         }
         public function imageGenerateName($p){

@@ -74,8 +74,34 @@ if ($type === "update") {
     //Atualizar senha do usuario
 } else if($type === "changepassword"){
 
+    //receber dados do post
+    $password = filter_input(INPUT_POST, "password");
+    $confirmpassword = filter_input(INPUT_POST, "confirmpassword");
+    
+    //Resgata dados do usuario
+    $userData = $userDAO->verifyToken();
+
+    $id = $userData->id;
+
+    if ($password == $confirmpassword) {
+
+        $user = new User();
+
+        //$finalpassword = $user->generatePassword($password); essa func coloca um hash ao inves da senha que esscolhi
+
+        $user->password = $password;//$finalpassword seria aqui no exemplo do prof
+        $user->id = $id;
+
+        $userDAO->changePassword($user);
+
+    }else {
+
+        $message->setMessage("As senhas não correspondem!", "error", "back");
+
+    }
+
 }else {
-    $message->setMessage("Informações invalidas", "error", "index.php");
+    $message->setMessage("Informações invalidas!", "error", "index.php");
 }
 
 ?>
