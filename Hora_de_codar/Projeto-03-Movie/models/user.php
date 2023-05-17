@@ -24,6 +24,9 @@
             return $finalPassword = password_hash($password, PASSWORD_DEFAULT);
 
         }
+        public function imageGenerateName($p){
+            return bin2hex(random_bytes(60)) . $p;
+        }
 
     }
 
