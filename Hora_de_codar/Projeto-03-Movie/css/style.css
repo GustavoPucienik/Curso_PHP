@@ -91,6 +91,10 @@
     padding: 40px;
 }
 
+.form-group{
+    margin: 12px 0;
+}
+
 /* Login / Register */
 #auth-row{
     justify-content: space-evenly;
@@ -125,6 +129,38 @@
     background-color: transparent;
     color: #f5c518;
     border-color: #f5c518;
+}
+
+/* Edit profile */
+
+#profile-image-container{
+    width: 150px;
+    height: 150px;
+    border: 6px solid #f5c518;
+    border-radius: 100%;
+    background-size: cover;
+    background-position: center;
+    margin: 15px auto;
+}
+
+.page-description{
+    color: #999;
+}
+
+#bio{
+    max-width: 400px;
+}
+
+.form-control.disabled{
+    background-color: #bbb;
+}
+
+#change-password-container{
+    margin-top: 30px;
+}
+
+.edit-profile-page .card-btn{
+    width: auto;
 }
 
 
