@@ -9,6 +9,7 @@ require_once("dao/movieDAO.php");
 
 $message = new Message($BASE_URL);
 $userDAO = new UserDAO($conn,$BASE_URL);
+$movieDAO = new MovieDAO($conn,$BASE_URL);
 
 // Resgata o tipo do formulario
 $type = filter_input(INPUT_POST, "type");
@@ -33,6 +34,7 @@ if ($type == "create") {
         $movie->trailer = $trailer;
         $movie->category = $category;
         $movie->length = $length;
+        $movie->users_id = $userData->id;
 
         //upload imagem do filme
         if (isset($_FILES["image"]) && !empty($_FILES["tmp_name"])) {
@@ -65,7 +67,6 @@ if ($type == "create") {
 
 
         }
-        print_r($_POST);print_r($_FILES); exit;
             $movieDAO->create($movie);
 
     } else{
