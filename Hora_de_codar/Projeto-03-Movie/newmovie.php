@@ -19,7 +19,7 @@
                     <input type="text" class="form-control" id="title" name="title" placeholder="Digite o titulo do seu filme">
                 </div>
                 <div class="form-group">
-                    <label for="imagem">Imagem:</label>
+                    <label for="image">Imagem:</label>
                     <input type="file" class="form-control" id="image" name="image">
                 </div>
                 <div class="form-group">

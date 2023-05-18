@@ -23,6 +23,7 @@ if ($type == "create") {
     $trailer = filter_input(INPUT_POST, "trailer");
     $category = filter_input(INPUT_POST, "category");
     $length = filter_input(INPUT_POST, "length");
+    $image = filter_input(INPUT_POST, "image");
 
     $movie = new Movie();
 
@@ -34,10 +35,11 @@ if ($type == "create") {
         $movie->trailer = $trailer;
         $movie->category = $category;
         $movie->length = $length;
+        $movie->image = $image;
         $movie->users_id = $userData->id;
 
         //upload imagem do filme
-        if (isset($_FILES["image"]) && !empty($_FILES["tmp_name"])) {
+        if (isset($_FILES["image"])) {
 
             $image = $_FILES["image"];
             $imageTypes = ["image/jpeg", "image/jpg", "image/png"];
