@@ -230,7 +230,8 @@
     margin-top: 30px;
 }
 
-.edit-profile-page .card-btn{
+.edit-profile-page .card-btn,
+#add-movie-container .card-btn{
     width: auto;
 }
 
@@ -264,6 +265,75 @@
 }
 .page-description-f{
     text-align: center;
+}
+
+/* Dashboard */
+#add-movie-container{
+    text-align: right;
+}
+
+#movies-dashboard .table{
+    color: #fff;
+}
+
+#movies-dashboard .table th{
+    border-top: none;
+}
+
+#movies-dashboard .table tr{
+    padding: 15px 0;
+}
+
+.table-movie-title{
+    color: #fff;
+    font-weight: bold;
+    transition: .5s;
+}
+
+.table-movie-title:hover{
+    color: #f5c518;
+}
+
+.actions-column{
+    max-width: 75px;
+    text-align: center;
+}
+
+.actions-column form{
+    display: inline-block;
+}
+
+.edit-btn,
+.delete-btn{
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 0 5px;
+    font-weight: bold;
+    transition: .5s;
+}
+
+.edit-btn{
+    background-color: #0dcaf0;
+    color: #fff;
+}
+
+.edit-btn:hover{
+    background-color: transparent;
+    color: #0dcaf0;
+    text-decoration: none;
+}
+
+.delete-btn{
+    border: #dc3545;
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.delete-btn:hover{
+    background-color: transparent;
+    color: #dc3545;
+    text-decoration: none;
 }
 
 
