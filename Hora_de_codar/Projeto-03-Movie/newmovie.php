@@ -7,6 +7,10 @@
 
     $userDAO = new UserDAO($conn, $BASE_URL);
     $userData = $userDAO->verifyToken(true);
+
+    $movieDAO = new MovieDAO($conn, $BASE_URL);
+
+    
 ?>
     <div id="main-container" class='container-fluid'>
         <div class="offset-md-4 col-md-4 new-movie-container">
