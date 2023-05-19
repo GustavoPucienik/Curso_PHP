@@ -62,7 +62,7 @@
                 <div class="col-md-4">
                     <div class="movie-image-container" style="background-image: url('<?= $BASE_URL?>/img/movies/<?= $movie->image ?>');"></div>
                 </div>
-                <div class="offset-md-1 col-md-10" id="revies-container">
+                <div class="offset-md-1 col-md-10" id="reviews-container">
                     <h3 id="reviews-title">Avaliações: </h3>
                     <!-- Verifica se habilita a review para o usuario ou não habilita -->
                     <div class="col-md-12" id="review-form-container">
