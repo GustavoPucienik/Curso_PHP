@@ -2,6 +2,7 @@
     require_once("templates/header.php");
     require_once("models/user.php");
     require_once("dao/userDAO.php");
+    require_once("dao/movieDAO.php");
     
     $user = new User();
 

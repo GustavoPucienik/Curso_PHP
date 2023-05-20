@@ -101,8 +101,88 @@ if ($type == "create") {
 
     }
 
+} else if ($type === "update") {
+
+    //receber os dados dos input
+    $title = filter_input(INPUT_POST, "title");
+    $description = filter_input(INPUT_POST, "description");
+    $trailer = filter_input(INPUT_POST, "trailer");
+    $category = filter_input(INPUT_POST, "category");
+    $length = filter_input(INPUT_POST, "length");
+    $image = filter_input(INPUT_POST, "image");
+    $id = filter_input(INPUT_POST, "id");
+
+    $movieData = $movieDAO->findById($id);
+
+    if($movieData) {
+
+        // Verificar se o filme é do usuário
+        if($movieData->users_id === $userData->id) {
+
+            if (!empty($title) && !empty($description) && !empty($category)) {
+
+            $movieData->title = $title;
+            $movieData->description = $description;
+            $movieData->trailer = $trailer;
+            $movieData->category = $category;
+            $movieData->length = $length;
+            $movieData->image = $image;
+            $movieData->id = $id;
+
+            //upload de imagem do filme
+            if (isset($_FILES["image"])) {
+
+                $image = $_FILES["image"];
+                $imageTypes = ["image/jpeg", "image/jpg", "image/png"];
+                $jpgArray = ["image/jpeg", "image/jpg"];
+    
+                //chegando tipo da imagem
+                if (in_array($image["type"],$imageTypes)) {
+    
+                    //checa se imagem é jpeg
+                    if(in_array($image["type"], $jpgArray)){
+                        $imagefile = imagecreatefromjpeg($image["tmp_name"]);
+                    }else{
+                        $imagefile = imagecreatefrompng($image["tmp_name"]);
+    
+                    }
+    
+                    //Gerando o nome da imagem
+              $movie = new Movie();
+
+              $imageName = $image;
+
+    
+                    imagejpeg($imagefile, "./img/movies/" . $imageName, 100);
+    
+                    $movieData->image = $imageName;
+    
+                } else{
+                    $message->setMessage("Tipo invalido de imagem(Only png, jpeg or jpg)", "error", "back");
+                }
+    
+    
+            }
+  
+          $movieDAO->update($movieData);
+            }else{
+              $message->setMessage("Você precisa adicionar pelo menos titulo, descrição e categoria!", "error", "back");
+            }
+          } else{
+              $message->setMessage("Informações invalidas1!", "error", "index.php");
+          }
+  
+      }else{
+  
+      $message->setMessage("Informações invalidas!2", "error", "index.php");
+  
+      }
+    
 }
  else {
-}
+
+    $message->setMessage("Informações invalidas!3", "error", "index.php");
+
+ }
 
 ?>
