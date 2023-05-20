@@ -40,10 +40,10 @@
                     <td><a href="<?= $BASE_URL?>movie.php?id=<?= $movie->id ?>" class="table-movie-title"><?= $movie->title ?></a></td>
                     <td><i class="fas fa-star"></i><?= $movie->rating ?></td>
                     <td class="actions-column">
+                        <form action="<?= $BASE_URL?>movie_process.php" method="post">
                         <a href="<?= $BASE_URL?>editmovie.php?id=<?= $movie->id ?>" class="edit-btn">
                             <i class="far fa-edit"></i> Editar
                         </a>
-                        <form action="<?= $BASE_URL?>movie_process.php" method="post">
                         <input type="hidden" name="type" value="delete">
                         <input type="hidden" name="id" value="<?= $movie->id?>">
                             <button type="submit" class="delete-btn">

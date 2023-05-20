@@ -400,7 +400,7 @@
 }
 
 .actions-column form{
-    display: inline-block;
+    display: block;
 }
 
 .edit-btn,
